@@ -21,7 +21,7 @@ public class CustomCube : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
@@ -30,9 +30,11 @@ public class CustomCube : MonoBehaviour
         //refTransform.Translate(moveSpeed * horizontal * Time.deltaTime, moveSpeed * vertical * Time.deltaTime, 0f);
 
         // 이동 Z축 -> 물체 기준 앞뒤 이동.
-        //refTransform.localPosition += new Vector3(0f, 0f, vertical * moveSpeed * Time.deltaTime);
+        //refTransform.position += new Vector3(0f, 0f, vertical * moveSpeed * Time.deltaTime);
         refTransform.position += refTransform.forward * vertical * moveSpeed * Time.deltaTime;
 
-        refTransform.Rotate(new Vector3(0f, horizontal * rotationSpeed * Time.deltaTime, 0f));
+        // 회전 Y축
+        //refTransform.Rotate(new Vector3(0f, horizontal * rotationSpeed * Time.deltaTime, 0f));
+        refTransform.rotation *= Quaternion.Euler(0f, horizontal * rotationSpeed * Time.deltaTime, 0f);
     }
 }
