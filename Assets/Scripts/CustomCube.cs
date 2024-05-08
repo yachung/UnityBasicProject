@@ -5,7 +5,8 @@ using UnityEngine;
 public class CustomCube : MonoBehaviour
 {
     // 필드
-    public Transform refTransform;
+    [SerializeField] private Transform refTransform;
+    [SerializeField] private float moveSpeed = 10f;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +24,10 @@ public class CustomCube : MonoBehaviour
     void Update()
     {
         // Console 창에 문자를 출력해주는 메소드
-        Debug.Log("Update");
-        refTransform.Translate(0.01f, 0f, 0f);
+        float horizontal = Input.GetAxis("Horizontal");
+        float vertical = Input.GetAxis("Vertical");
+        Debug.Log(horizontal);
+
+        refTransform.Translate(moveSpeed * horizontal * Time.deltaTime, moveSpeed * vertical * Time.deltaTime, 0f);
     }
 }

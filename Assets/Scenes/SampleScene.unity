@@ -341,6 +341,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   refTransform: {fileID: 0}
+  xSpeed: 0.01
 --- !u!23 &1631229219
 MeshRenderer:
   m_ObjectHideFlags: 0
