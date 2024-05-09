@@ -212,7 +212,7 @@ MonoBehaviour:
   score: 0
   targetScore: 0
   scoreText: {fileID: 1422466503}
-  clearText: {fileID: 1458308455}
+  clearObj: {fileID: 1458308453}
 --- !u!4 &177220930
 Transform:
   m_ObjectHideFlags: 0

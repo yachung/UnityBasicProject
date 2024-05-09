@@ -13,7 +13,7 @@ namespace RollABall
 
         // 점수를 보여줄 TextUI
         [SerializeField] private TMPro.TextMeshProUGUI scoreText;
-        [SerializeField] private TMPro.TextMeshProUGUI clearText;
+        [SerializeField] private GameObject clearObj;
 
         private void Awake()
         {
@@ -31,7 +31,7 @@ namespace RollABall
 
             if (IsGameClear())
             {
-                clearText.gameObject.SetActive(true);
+                clearObj.SetActive(true);
                 Debug.LogWarning("GameClear");
             }
         }
