@@ -15,13 +15,23 @@ namespace CustomMesh
 
         private void Awake()
         {
+            InitializeComponent();
+
+            SetMesh();
+        }
+
+        private void InitializeComponent()
+        {
             // 일단 있는지 검색 후 설정
             meshFilter = GetComponent<MeshFilter>();
-            if (meshFilter == null ) meshFilter = gameObject.AddComponent<MeshFilter>();
+            if (meshFilter == null) meshFilter = gameObject.AddComponent<MeshFilter>();
 
             meshRenderer = GetComponent<MeshRenderer>();
-            if ( meshRenderer == null ) meshRenderer = gameObject.AddComponent<MeshRenderer>();
+            if (meshRenderer == null) meshRenderer = gameObject.AddComponent<MeshRenderer>();
+        }
 
+        private void SetMesh()
+        {
             // 메시 생성.
             Mesh mesh = new Mesh();
 
