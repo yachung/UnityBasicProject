@@ -76,7 +76,7 @@ namespace CustomMesh
             };
 
             // uv ¼³Á¤
-            mesh.SetUVs(0, uvs);
+            //mesh.SetUVs(0, uvs);
 
             meshFilter.mesh = mesh;
         }
