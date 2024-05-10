@@ -19,8 +19,10 @@ public class CustomMeshCube : MonoBehaviour
     {
         Mesh mesh = new Mesh();
 
+        // 0, 0, 0 Á¤À°¸éÃ¼ÀÇ Áß¾Ó
         Vector3[] vertices = new Vector3[]
         {
+            // xy Æò¸éÀ¸·Î ´ëÄª
             // 0, 0, -0.5 back
             new Vector3(-0.5f, -0.5f, -0.5f),
             new Vector3(-0.5f,  0.5f, -0.5f),
@@ -28,11 +30,12 @@ public class CustomMeshCube : MonoBehaviour
             new Vector3( 0.5f, -0.5f, -0.5f),
 
             // 0, 0, 0.5 front
-            new Vector3(-0.5f, -0.5f,  0.5f),
-            new Vector3(-0.5f,  0.5f,  0.5f),
-            new Vector3( 0.5f,  0.5f,  0.5f),
             new Vector3( 0.5f, -0.5f,  0.5f),
+            new Vector3( 0.5f,  0.5f,  0.5f),
+            new Vector3(-0.5f,  0.5f,  0.5f),
+            new Vector3(-0.5f, -0.5f,  0.5f),
 
+            // yz Æò¸éÀ¸·Î ´ëÄª
             // -0.5, 0, 0 left
             new Vector3(-0.5f, -0.5f,  0.5f),
             new Vector3(-0.5f,  0.5f,  0.5f),
@@ -45,6 +48,7 @@ public class CustomMeshCube : MonoBehaviour
             new Vector3( 0.5f,  0.5f, -0.5f),
             new Vector3( 0.5f, -0.5f, -0.5f),
 
+            // xz Æò¸éÀ¸·Î ´ëÄª
             // 0, -0.5, 0 bottom
             new Vector3(-0.5f, -0.5f, -0.5f),
             new Vector3(-0.5f, -0.5f,  0.5f),
@@ -67,8 +71,8 @@ public class CustomMeshCube : MonoBehaviour
         int[] indices = new int[]
         {   0, 1, 2,
             0, 2, 3,
-            4, 6, 5,
-            4, 7, 6,
+            4, 5, 6,
+            4, 6, 7,
             8, 9, 10,
             8, 10, 11,
             12, 14, 13,
@@ -116,57 +120,54 @@ public class CustomMeshCube : MonoBehaviour
         Vector3[] uvs = new Vector3[]
         {
             // 0, 0, -0.5 back
-            new Vector3(-0.5f, -0.5f, -0.5f),
-            new Vector3(-0.5f,  0.5f, -0.5f),
-            new Vector3( 0.5f,  0.5f, -0.5f),
-            new Vector3( 0.5f, -0.5f, -0.5f),
+            new Vector3(-1f, -1f, 0f),
+            new Vector3(-1f,  0f, 0f),
+            new Vector3( 0f,  0f, 0f),
+            new Vector3( 0f, -1f, 0f),
 
             // 0, 0, 0.5 front
-            new Vector3(-0.5f, -0.5f,  0.5f),
-            new Vector3(-0.5f,  0.5f,  0.5f),
-            new Vector3( 0.5f,  0.5f,  0.5f),
-            new Vector3( 0.5f, -0.5f,  0.5f),
+            new Vector3(-1f, -1f,  0f),
+            new Vector3(-1f,  0f,  0f),
+            new Vector3( 0f,  0f,  0f),
+            new Vector3( 0f, -1f,  0f),
 
             // -0.5, 0, 0 left
-            new Vector3(-0.5f, -0.5f,  0.5f),
-            new Vector3(-0.5f,  0.5f,  0.5f),
-            new Vector3(-0.5f,  0.5f, -0.5f),
-            new Vector3(-0.5f, -0.5f, -0.5f),
+            new Vector3(-1f, -1f, 0f),
+            new Vector3(-1f,  0f, 0f),
+            new Vector3( 0f,  0f, 0f),
+            new Vector3( 0f, -1f, 0f),
 
-            // 0.5, 0, 0 right 
-            new Vector3( 0.5f, -0.5f,  0.5f),
-            new Vector3( 0.5f,  0.5f,  0.5f),
-            new Vector3( 0.5f,  0.5f, -0.5f),
-            new Vector3( 0.5f, -0.5f, -0.5f),
+            new Vector3(-1f, -1f, 0f),
+            new Vector3(-1f,  0f, 0f),
+            new Vector3( 0f,  0f, 0f),
+            new Vector3( 0f, -1f, 0f),
 
-            // 0, -0.5, 0 bottom
-            new Vector3(-0.5f, -0.5f, -0.5f),
-            new Vector3(-0.5f, -0.5f,  0.5f),
-            new Vector3( 0.5f, -0.5f,  0.5f),
-            new Vector3( 0.5f, -0.5f, -0.5f),
+            new Vector3(-1f, -1f, 0f),
+            new Vector3(-1f,  0f, 0f),
+            new Vector3( 0f,  0f, 0f),
+            new Vector3( 0f, -1f, 0f),
 
-            // 0, 0.5, 0 top
-            new Vector3(-0.5f,  0.5f, -0.5f),
-            new Vector3(-0.5f,  0.5f,  0.5f),
-            new Vector3( 0.5f,  0.5f,  0.5f),
-            new Vector3( 0.5f,  0.5f, -0.5f),
-                //new Vector3(0f, 0f, 0f),
-                //new Vector3(0f, 1f, 0f),
-                //new Vector3(1f, 1f, 0f),
-                //new Vector3(1f, 0f, 0f),
+            new Vector3(-1f, -1f, 0f),
+            new Vector3(-1f,  0f, 0f),
+            new Vector3( 0f,  0f, 0f),
+            new Vector3( 0f, -1f, 0f),
+            //// 0.5, 0, 0 right 
+            //new Vector3( 0.5f, -0.5f,  0.5f),
+            //new Vector3( 0.5f,  0.5f,  0.5f),
+            //new Vector3( 0.5f,  0.5f, -0.5f),
+            //new Vector3( 0.5f, -0.5f, -0.5f),
 
-                //new Vector3(0f, 1f, 0f),
-                //new Vector3(0f, 1f, 0f),
-                //new Vector3(0f, 1f, 0f),
-                //new Vector3(0f, 1f, 0f),
-                //new Vector3(0f, 1f, 0f),
-                //new Vector3(0f, 1f, 0f),
-                //new Vector3(0f, 1f, 0f),
-                //new Vector3(0f, 1f, 0f),
-                //new Vector3(0f, 1f, 0f),
-                //new Vector3(0f, 1f, 0f),
-                //new Vector3(1f, 1f),
-                //new Vector3(1f, 0f)
+            //// 0, -0.5, 0 bottom
+            //new Vector3(-0.5f, -0.5f, -0.5f),
+            //new Vector3(-0.5f, -0.5f,  0.5f),
+            //new Vector3( 0.5f, -0.5f,  0.5f),
+            //new Vector3( 0.5f, -0.5f, -0.5f),
+
+            //// 0, 0.5, 0 top
+            //new Vector3(-0.5f,  0.5f, -0.5f),
+            //new Vector3(-0.5f,  0.5f,  0.5f),
+            //new Vector3( 0.5f,  0.5f,  0.5f),
+            //new Vector3( 0.5f,  0.5f, -0.5f),
         };
 
         mesh.SetVertices(vertices);
